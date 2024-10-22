@@ -1,17 +1,10 @@
-<h1 align="center">Hola 👋, soy [Tu Nombre]</h1>
+<h1 align="center">Hola 👋, soy jhosedt</h1>
 
-<!-- Loading animation -->
-<div id="loading" align="center">
-  <h2>Cargando...</h2>
-</div>
-
-<!-- Main content - initially hidden -->
-<div id="main-content" style="display: none;">
-  <!-- Promotional screen - animated image carousel -->
+<div id="main-content">
   <div id="carousel" align="center">
-    <img id="promo-image" src="https://source.unsplash.com/random/800x400?tech" alt="Promocional" style="width:80%; border-radius:15px;" />
+    <img src="jhosedt/jhosedt/imagen1.jpg" alt="Promocional" style="width:80%; border-radius:15px;" />
   </div>
-
+<img src="jhosedt/jhosedt/imagen2.png">
   <!-- Blinking icons for tech stack -->
   <h2 align="center">Tecnologías que manejo 💻</h2>
   <div id="tech-icons" align="center">
@@ -38,18 +31,9 @@
 
 <!-- Blinking animation for icons -->
 <style>
-  #loading h2 {
-    animation: blink 1.5s infinite;
-  }
-
   #tech-icons img {
     animation: blinkIcon 1.5s infinite alternate;
     margin: 10px;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
   }
 
   @keyframes blinkIcon {
@@ -68,20 +52,14 @@
   }
 </style>
 
-<!-- Script for loading and image slideshow -->
+<!-- Script for image slideshow -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Show main content after loading
-    setTimeout(() => {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    }, 3000); // 3-second loading delay
-
     // Image slideshow logic
     const images = [
-      'https://source.unsplash.com/random/800x400?coding',
-      'https://source.unsplash.com/random/800x400?technology',
-      'https://source.unsplash.com/random/800x400?software'
+      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen1.jpg',
+      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen2.jpg',
+      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen3.jpg'
     ];
     let currentImageIndex = 0;
 
