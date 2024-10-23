@@ -1,10 +1,13 @@
 <h1 align="center">Hola 👋, soy jhosedt</h1>
 
 <div id="main-content">
+  <!-- Promotional screen - animated image carousel -->
   <div id="carousel" align="center">
-    <img src="jhosedt/jhosedt/imagen1.jpg" alt="Promocional" style="width:80%; border-radius:15px;" />
+    <img id="promo-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj8r_zQGxyzANwOl_HhdwBhbXGWShjhCy6Rf2SVgbnherHmNeUjMU8wtDVKsmHWm8L4A8&usqp=CAU"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj8r_zQGxyzANwOl_HhdwBhbXGWShjhCy6Rf2SVgbnherHmNeUjMU8wtDVKsmHWm8L4A8&usqp=CAU" alt="Promocional" />
+    
   </div>
-<img src="jhosedt/jhosedt/imagen2.png">
+
   <!-- Blinking icons for tech stack -->
   <h2 align="center">Tecnologías que manejo 💻</h2>
   <div id="tech-icons" align="center">
@@ -29,8 +32,64 @@
   </p>
 </div>
 
-<!-- Blinking animation for icons -->
+<!-- CSS for hover effects and styling -->
 <style>
+  /* Style for the carousel */
+  #carousel {
+    overflow: hidden;
+    position: relative;
+    width: 80%; /* Asegúrate de que esto coincida con el ancho de la imagen */
+    margin: 0 auto; /* Centrar el carrusel */
+  }
+
+  #promo-image {
+    width: 100%;
+    border-radius: 50% 51px;
+    position: absolute; /* Asegúrate de que la imagen esté en una posición absoluta para moverla */
+    transition: transform 1s ease; /* Añade la transición */
+  }
+
+  /* Style for the project cards */
+  .card {
+    width: 300px;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card .details {
+    padding: 15px;
+  }
+
+  .card .details h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  .card .details p {
+    color: #777;
+  }
+
+  .card:hover img {
+    transform: rotate(5deg);
+    transition: transform 0.3s ease;
+  }
+
   #tech-icons img {
     animation: blinkIcon 1.5s infinite alternate;
     margin: 10px;
@@ -40,33 +99,25 @@
     0% { opacity: 0.5; transform: scale(1); }
     100% { opacity: 1; transform: scale(1.1); }
   }
-
-  #promo-image {
-    animation: slide 5s infinite;
-  }
-
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(100%); }
-    100% { transform: translateX(0); }
-  }
 </style>
 
 <!-- Script for image slideshow -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Image slideshow logic
     const images = [
-      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen1.jpg',
-      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen2.jpg',
-      'https://raw.githubusercontent.com/usuario/repositorio/main/images/mi_imagen3.jpg'
+      'https://source.unsplash.com/random/800x400?coding',
+      'https://source.unsplash.com/random/800x400?technology',
+      'https://source.unsplash.com/random/800x400?software'
     ];
     let currentImageIndex = 0;
 
     setInterval(() => {
       const promoImage = document.getElementById('promo-image');
       currentImageIndex = (currentImageIndex + 1) % images.length;
+
+      // Cambiar la posición de la imagen
+      promoImage.style.transform = `translateX(${100 * currentImageIndex}%)`;
       promoImage.src = images[currentImageIndex];
-    }, 5000); // Change image every 5 seconds
+    }, 5000); // Cambiar imagen cada 5 segundos
   });
 </script>
